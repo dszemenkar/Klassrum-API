@@ -18,7 +18,7 @@ api = Api(app)
 
 jwt = JWT(app, authenticate, identify)
 
-api.add_resource(store, '/stores/<string:name>')
+api.add_resource(Store, '/stores/<string:name>')
 api.add_resource(Product, '/products/<string:name>')
 api.add_resource(ProductList, '/products')
 api.add_resource(StoreList, '/stores')
