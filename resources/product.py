@@ -42,7 +42,7 @@ class Product(Resource):
 		if ProductModel.find_by_name(name):
 			return {'message': "A product with name '{}' already exists.".format(name)}, 400
 
-		data = product.parser.parse_args()
+		data = Product.parser.parse_args()
 		product = ProductModel(name, **data)
 
 		try:
@@ -58,7 +58,7 @@ class Product(Resource):
 			product.delete_from_db()
 
 	def put(self, name):
-		data = product.parser.parse_args()
+		data = Product.parser.parse_args()
 
 		product = ProductModel.find_by_name(name)
 
