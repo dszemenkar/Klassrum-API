@@ -17,7 +17,7 @@ class Image(Resource):
 		image = ImageModel.find_by_place(product_id)
 		if image:
 			return image.json()
-		return {'message': 'image not found'}, 404
+		return {'message': 'Image was not found'}, 404
 
 	def post(self):
 		data = Image.parser.parse_args()
